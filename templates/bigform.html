@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<form enctype="multipart/form-data" method="post" action="{% url 'bigform' %}">
+			{% csrf_token %}
+			{{ form }}
+			<input type="submit" value="Send" />
+			<input type="hidden" name="next" value="{{ next }}" />
+		</form>
+
+		<br/>
+
+		field1: {{ field1 }}<br/>
+		field2: {{ field2 }}<br/>
+		field3: {{ field3 }}
+	</body>
+</html>
